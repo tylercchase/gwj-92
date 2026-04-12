@@ -106,6 +106,9 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_kmhfv")
 size = Vector2(2, 1.32)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5q4o7"]
+data = PackedVector3Array(1, 0, 0.65999997, -1, 0, 0.65999997, 1, 0, -0.65999997, -1, 0, 0.65999997, -1, 0, -0.65999997, 1, 0, -0.65999997)
+
 [node name="World" type="Node3D" unique_id=1734740153]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=548492820]
@@ -129,6 +132,12 @@ mesh = SubResource("ArrayMesh_fyndt")
 [node name="TV Screen" type="MeshInstance3D" parent="TV" unique_id=1234101153]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
 mesh = SubResource("PlaneMesh_rlaii")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TV" unique_id=1884739692]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D" unique_id=330749065]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
+shape = SubResource("ConcavePolygonShape3D_5q4o7")
 
 [node name="Wii Remote" parent="." unique_id=2037275998 instance=ExtResource("2_gh0ne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1620064, 2.5792272)

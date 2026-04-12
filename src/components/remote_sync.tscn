@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://svmnq18x8rmg"]
+
+[ext_resource type="Script" uid="uid://dpg3aw2u4bc8" path="res://src/components/remote_sync.gd" id="1_fbyuu"]
+
+[node name="RemoteSync" type="Node" unique_id=1719558089]
+script = ExtResource("1_fbyuu")

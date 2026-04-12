@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://caqqu8g7wrcvl"]
 
 [ext_resource type="Script" uid="uid://cmq7wqvvlkmn0" path="res://src/games/generic_scene.gd" id="1_nr872"]
+[ext_resource type="PackedScene" uid="uid://svmnq18x8rmg" path="res://src/components/remote_sync.tscn" id="2_mv1iy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v3yd"]
 albedo_color = Color(0.37399608, 0.4170747, 0.12931448, 1)
@@ -26,3 +27,5 @@ transform = Transform3D(1, 0, 0, 0, 0.9864493, 0.16406633, 0, -0.16406633, 0.986
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bat" unique_id=1555851611]
 transform = Transform3D(0.052335974, 0.9986295, 0, -0.9986295, 0.052335974, 0, 0, 0, 1, -0.075, 0.472, 1.609)
 mesh = SubResource("CapsuleMesh_4v3yd")
+
+[node name="RemoteSync" parent="Bat" unique_id=1719558089 instance=ExtResource("2_mv1iy")]
