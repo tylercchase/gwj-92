@@ -5,11 +5,14 @@
 [sub_resource type="BoxMesh" id="BoxMesh_eewff"]
 size = Vector3(0.275, 0.165, 0.765)
 
-[node name="Wii Remote" type="MeshInstance3D" unique_id=2037275998 groups=["real_remote"]]
+[node name="Wii Remote" type="MeshInstance3D" unique_id=2037275998 node_paths=PackedStringArray("raycast") groups=["real_remote"]]
 mesh = SubResource("BoxMesh_eewff")
 script = ExtResource("1_c6a84")
 movement_scale = 0.005
+raycast = NodePath("RayCast3D")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1805652406]
 target_position = Vector3(0, 0, -9.575)
 collision_mask = 2
+debug_shape_custom_color = Color(0.8464509, 0.5640495, 0.77145547, 1)
+debug_shape_thickness = 5
