@@ -1,3 +1,126 @@
 [gd_scene format=3 uid="uid://d1umaxp8qkohj"]
 
-[node name="Node3D" type="Node3D" unique_id=1734740153]
+[ext_resource type="Script" uid="uid://d3rw08jfwdo4a" path="res://src/main.gd" id="1_eewff"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eewff"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_gh0ne"]
+sky_material = SubResource("ProceduralSkyMaterial_eewff")
+
+[sub_resource type="Environment" id="Environment_5q4o7"]
+background_mode = 2
+sky = SubResource("Sky_gh0ne")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eewff"]
+albedo_color = Color(0.22246584, 0.21509731, 0.20290545, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gh0ne"]
+albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5q4o7"]
+albedo_color = Color(0.08468992, 0.08468992, 0.08468992, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cfgd"]
+albedo_color = Color(0.17245302, 0.14115712, 0.11564135, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyndt"]
+albedo_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmhfv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rlaii"]
+material = SubResource("StandardMaterial3D_kmhfv")
+size = Vector2(2, 1.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eewff"]
+size = Vector3(0.275, 0.165, 0.765)
+
+[node name="World" type="Node3D" unique_id=1734740153]
+script = ExtResource("1_eewff")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=548492820]
+environment = SubResource("Environment_5q4o7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1752575372]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=427068254]
+size = Vector3(10, 0.1, 10)
+material = SubResource("StandardMaterial3D_eewff")
+
+[node name="TV Stand" type="CSGBox3D" parent="." unique_id=1698712259]
+transform = Transform3D(1.5851207, 0, 0, 0, 1.1637337, 0, 0, 0, 1, -0.07057412, 0.30969727, -2.7471852)
+size = Vector3(2.5731506, 0.49649048, 1)
+material = SubResource("StandardMaterial3D_gh0ne")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TV Stand" unique_id=434144365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048828125, 0.077301025, 0)
+operation = 2
+size = Vector3(0.99902344, 0.2119751, 1)
+material = SubResource("StandardMaterial3D_5q4o7")
+
+[node name="Door" type="CSGBox3D" parent="TV Stand" unique_id=1951350032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9407709, -0.020095825, 0.49798584)
+operation = 2
+size = Vector3(0.61328125, 0.4067688, 0.0040283203)
+material = SubResource("StandardMaterial3D_3cfgd")
+
+[node name="DoorHandle" type="CSGBox3D" parent="TV Stand" unique_id=778091290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94727117, 0.14146805, 0.49798584)
+size = Vector3(0.5093384, 0.02722931, 0.0040283203)
+material = SubResource("StandardMaterial3D_fyndt")
+
+[node name="Door2" type="CSGBox3D" parent="TV Stand" unique_id=354873350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87491935, -0.020095825, 0.49798584)
+operation = 2
+size = Vector3(0.61328125, 0.4067688, 0.0040283203)
+material = SubResource("StandardMaterial3D_3cfgd")
+
+[node name="DoorHandle2" type="CSGBox3D" parent="TV Stand" unique_id=809576666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8684191, 0.14146805, 0.49798584)
+size = Vector3(0.5093384, 0.02722931, 0.0040283203)
+material = SubResource("StandardMaterial3D_fyndt")
+
+[node name="Door3" type="CSGBox3D" parent="TV Stand" unique_id=1892054162]
+transform = Transform3D(0.6881748, 0, 0, 0, 0.43186417, 0, 0, 0, 1, 0.2729538, -0.13541333, 0.49798584)
+operation = 2
+size = Vector3(0.61328125, 0.4067688, 0.0040283203)
+material = SubResource("StandardMaterial3D_3cfgd")
+
+[node name="DoorHandle3" type="CSGBox3D" parent="TV Stand" unique_id=1284413832]
+transform = Transform3D(0.6881748, 0, 0, 0, 0.43186417, 0, 0, 0, 1, 0.26848048, -0.06563969, 0.49798584)
+size = Vector3(0.5093384, 0.02722931, 0.0040283203)
+material = SubResource("StandardMaterial3D_fyndt")
+
+[node name="Door4" type="CSGBox3D" parent="TV Stand" unique_id=1841034498]
+transform = Transform3D(0.6881748, 0, 0, 0, 0.43186417, 0, 0, 0, 1, -0.2615289, -0.13541333, 0.49798584)
+operation = 2
+size = Vector3(0.61328125, 0.4067688, 0.0040283203)
+material = SubResource("StandardMaterial3D_3cfgd")
+
+[node name="DoorHandle4" type="CSGBox3D" parent="TV Stand" unique_id=220058938]
+transform = Transform3D(0.6881748, 0, 0, 0, 0.43186417, 0, 0, 0, 1, -0.26600224, -0.06563969, 0.49798584)
+size = Vector3(0.5093384, 0.02722931, 0.0040283203)
+material = SubResource("StandardMaterial3D_fyndt")
+
+[node name="TV" type="CSGBox3D" parent="." unique_id=1662875467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055092096, 1.3556575, -2.676169)
+size = Vector3(2.436432, 1.4863281, 0.68652344)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TV" unique_id=1234101153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
+mesh = SubResource("PlaneMesh_rlaii")
+
+[node name="Wii Remote" type="MeshInstance3D" parent="." unique_id=1248800076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1620064, 2.5792272)
+mesh = SubResource("BoxMesh_eewff")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=350836536]
+transform = Transform3D(0.9748313, -0.0565399, 0.21565531, 0, 0.9673076, 0.253606, -0.22294387, -0.24722305, 0.94296175, 0.76908803, 2.0475395, 3.8678706)
+current = true
