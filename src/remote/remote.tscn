@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xeolspn531r6"]
+
+[ext_resource type="Script" uid="uid://bobipb1w6bm2k" path="res://src/remote/wii_remote.gd" id="1_c6a84"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eewff"]
+size = Vector3(0.275, 0.165, 0.765)
+
+[node name="Wii Remote" type="MeshInstance3D" unique_id=2037275998 groups=["real_remote"]]
+mesh = SubResource("BoxMesh_eewff")
+script = ExtResource("1_c6a84")
+movement_scale = 0.005
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1805652406]
+target_position = Vector3(0, 0, -9.575)
+collision_mask = 2

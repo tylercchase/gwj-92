@@ -15,6 +15,10 @@ run/main_scene="uid://d1umaxp8qkohj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+real_remote="Remote in the real world that the player controls"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
