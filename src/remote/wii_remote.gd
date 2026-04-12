@@ -11,7 +11,8 @@ signal raycast_hit
 signal moved
 
 func _ready() -> void:
-	pass
+	if raycast.is_colliding():
+		raycast_hit.emit(raycast.get_collision_point())
 
 func _input(event: InputEvent) -> void:
 	var delta = Vector3.ZERO

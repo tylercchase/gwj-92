@@ -5,6 +5,13 @@
 [sub_resource type="BoxMesh" id="BoxMesh_eewff"]
 size = Vector3(0.275, 0.165, 0.765)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6a84"]
+albedo_color = Color(0.94424534, 0.3676494, 0.34333304, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c6a84"]
+material = SubResource("StandardMaterial3D_c6a84")
+size = Vector3(0.035, 0.085, 12.34)
+
 [node name="Wii Remote" type="MeshInstance3D" unique_id=2037275998 node_paths=PackedStringArray("raycast") groups=["real_remote"]]
 mesh = SubResource("BoxMesh_eewff")
 script = ExtResource("1_c6a84")
@@ -16,3 +23,8 @@ target_position = Vector3(0, 0, -9.575)
 collision_mask = 2
 debug_shape_custom_color = Color(0.8464509, 0.5640495, 0.77145547, 1)
 debug_shape_thickness = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1586227805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+visible = false
+mesh = SubResource("BoxMesh_c6a84")
