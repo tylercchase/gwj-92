@@ -100,10 +100,19 @@ viewport_path = NodePath("GameWorld")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmhfv"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_3cfgd")
+texture_filter = 0
+texture_repeat = false
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rlaii"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_kmhfv")
+size = Vector2(1.65, 1.32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlaii"]
+albedo_color = Color(0.24477637, 0.2447764, 0.24477637, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5q4o7"]
+material = SubResource("StandardMaterial3D_rlaii")
 size = Vector2(2, 1.32)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5q4o7"]
@@ -133,6 +142,10 @@ mesh = SubResource("ArrayMesh_fyndt")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
 mesh = SubResource("PlaneMesh_rlaii")
 
+[node name="TV Screen Letterboxing" type="MeshInstance3D" parent="TV/TV Screen" unique_id=227072145]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, -0.0048451424, 0)
+mesh = SubResource("QuadMesh_5q4o7")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="TV" unique_id=1884739692]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D" unique_id=330749065]
@@ -143,9 +156,12 @@ shape = SubResource("ConcavePolygonShape3D_5q4o7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1620064, 2.5792272)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=350836536]
-transform = Transform3D(0.9748313, -0.0565399, 0.21565531, 0, 0.9673076, 0.253606, -0.22294387, -0.24722305, 0.94296175, 0.76908803, 2.0475395, 3.8678706)
+transform = Transform3D(0.9748313, -0.0565399, 0.21565531, 0, 0.9673076, 0.253606, -0.22294387, -0.24722305, 0.94296175, 1.184, 2.143, 4.598)
 current = true
+fov = 35.0
 
 [node name="GameWorld" type="SubViewport" parent="." unique_id=1327630236]
+own_world_3d = true
+size = Vector2i(600, 480)
 script = ExtResource("2_5q4o7")
 test_scene = ExtResource("3_5q4o7")
