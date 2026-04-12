@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ic1nb2uj1w14"]
+
+[ext_resource type="Texture2D" uid="uid://dovc6oj60vihf" path="res://assets/fence/fence_albedo.png" id="1"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.47486746, 0.99999994, 0.9694254, 1)
+albedo_texture = ExtResource("1")
+metallic = 0.8
+uv1_scale = Vector3(3.5, 3.5, 3.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2
