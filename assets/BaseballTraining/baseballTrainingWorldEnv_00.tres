@@ -1,0 +1,18 @@
+[gd_resource type="Environment" format=3 uid="uid://cyr0a84jneg6"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_d24im"]
+rayleigh_color = Color(0.80155075, 0.9128041, 0.99844974, 1)
+ground_color = Color(0.54901963, 0.60784316, 0.29803923, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_b6sw3"]
+sky_material = SubResource("PhysicalSkyMaterial_d24im")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_b6sw3")
+ssao_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.7
+glow_bloom = 0.3
