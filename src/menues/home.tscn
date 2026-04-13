@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chrhbmg6lj2o2" path="res://assets/menu/background.png" id="1_dremb"]
 [ext_resource type="Script" uid="uid://cqkhpmrx0xgtt" path="res://src/menues/menu_interface.gd" id="1_tu8i5"]
 [ext_resource type="Texture2D" uid="uid://drqs4hggke4uf" path="res://assets/menu/home_bottom_section.svg" id="2_w7c6r"]
+[ext_resource type="Script" uid="uid://rsn4xpsdaaqg" path="res://src/menues/scene_button.gd" id="3_v33yu"]
 [ext_resource type="Script" uid="uid://ctto8tfkao7tt" path="res://src/menues/cursor.gd" id="4_54oxq"]
 [ext_resource type="Texture2D" uid="uid://dmqbd650cjcs" path="res://assets/menu/cursor.svg" id="4_x82vi"]
 
@@ -57,6 +58,16 @@ alignment = 1
 [node name="TextureButton2" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=797726890]
 layout_mode = 2
 texture_normal = ExtResource("1_2ep87")
+script = ExtResource("3_v33yu")
+target_scene_path = "uid://caqqu8g7wrcvl"
+
+[node name="Label" type="Label" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer/TextureButton2" unique_id=1933518425]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 96.0
+text = "TENNIS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=746160732]
 layout_mode = 2
