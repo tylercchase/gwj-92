@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Events="*uid://cxiaf0fthcfg8"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rider-plugin/plugin.cfg")
+
 [global_group]
 
 real_remote="Remote in the real world that the player controls"

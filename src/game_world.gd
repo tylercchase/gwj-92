@@ -3,8 +3,8 @@ extends SubViewport
 @export var test_scene: PackedScene
 @export var tv_mesh: MeshInstance3D
 
-func _ready() -> void:
-    Events.scene_changed.connect(_on_scene_change)
+# func _ready() -> void:
+#     Events.scene_changed.connect(_on_scene_change)
 
 
 func _on_scene_change(path):

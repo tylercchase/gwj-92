@@ -1,3 +1,4 @@
+class_name SceneButton
 extends TextureButton
 
 @export_file("*.tscn") var target_scene_path: String
