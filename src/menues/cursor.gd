@@ -1,3 +1,4 @@
+class_name Cursor
 extends TextureRect
 
 @export var menu_interface: MenuInterfaceComponent
@@ -14,7 +15,6 @@ func _on_position_moved(test):
 
 func _process(_event) -> void:
 	if Input.is_action_just_pressed("click"):
-		print('test)')
 		on_click(position)
 
 func on_click(coords):
