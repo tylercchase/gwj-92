@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dn3o8kt52le44"]
+
+[ext_resource type="Script" uid="uid://m4gs0yp5uhtr" path="res://src/games/baseball/baseball.gd" id="1_tu3qb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_r2vot"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r2vot"]
+radius = 0.2
+
+[node name="Baseball" type="RigidBody3D" unique_id=1978597965]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_tu3qb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=724762801]
+mesh = SubResource("SphereMesh_r2vot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=145099189]
+shape = SubResource("SphereShape3D_r2vot")

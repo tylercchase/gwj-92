@@ -10,4 +10,3 @@ func _ready():
 
 func _on_remote_moved(delta: Vector3):
 	get_parent().position += delta
-	print(delta)
