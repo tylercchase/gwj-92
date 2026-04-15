@@ -1,7 +1,9 @@
+class_name RemoteSync
 extends Node
 
 var real_remote: RealRemote
 
+signal position_changed
 
 func _ready():
 	real_remote = get_tree().get_first_node_in_group("real_remote")
@@ -9,4 +11,4 @@ func _ready():
 
 
 func _on_remote_moved(delta: Vector3):
-	get_parent().position += delta
+	position_changed.emit(delta)

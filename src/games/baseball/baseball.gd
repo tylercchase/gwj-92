@@ -15,4 +15,7 @@ func _on_body_entered(body):
 		var collision_position: Vector3 = local_collision_pos - global_position
 		apply_impulse(collision_position.abs() * Vector3(1,1,-40), collision_position) # TODO: figure out bat velocity better so faster swings go farther
 		# TODO: need to remove self either when missed or after hitting something else/time period after hit = home run
+		if body is Bat:
+			print('collided with a bat! do some cool animation or something')
+			print(body.calculate_movement_over_time())
 		
