@@ -37,7 +37,7 @@ size = Vector3(13, 0.401, 8.984)
 material = SubResource("StandardMaterial3D_4v3yd")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1202822331]
-transform = Transform3D(1, 0, 0, 0, 0.9864493, 0.16406633, 0, -0.16406633, 0.9864493, 0, 0.93521345, 2.4357162)
+transform = Transform3D(0.945757, -0.053301055, 0.3204727, -0.048955876, 0.95180255, 0.3027791, -0.32116517, -0.3020445, 0.8975645, 0.39393586, 1.3745303, 2.4357162)
 fov = 60.0
 
 [node name="Bat" parent="." unique_id=1301539839 instance=ExtResource("2_r5w5a")]

@@ -12,10 +12,16 @@ func _integrate_forces( state ):
 
 func _on_body_entered(body):
 	if local_collision_pos:
-		var collision_position: Vector3 = local_collision_pos - global_position
-		apply_impulse(collision_position.abs() * Vector3(1,1,-40), collision_position) # TODO: figure out bat velocity better so faster swings go farther
-		# TODO: need to remove self either when missed or after hitting something else/time period after hit = home run
 		if body is Bat:
-			print('collided with a bat! do some cool animation or something')
-			print(body.calculate_movement_over_time())
-		
+			var bat_velocity: Vector3 = body.calculate_movement_over_time()
+			var speed: float = bat_velocity.length()
+
+			var impulse: Vector3 = bat_velocity * (speed * 300.0)
+			impulse.z = abs(impulse.z) * -1
+			print(impulse)
+			var collision_position: Vector3 = local_collision_pos - global_position
+			apply_impulse(impulse, collision_position)
+			local_collision_pos = null
+		else:
+			# TODO: need to remove self either when missed or after hitting something else/time period after hit = home run
+			pass
