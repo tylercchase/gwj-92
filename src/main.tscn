@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c140t3haob3nr" path="res://src/game_world.gd" id="2_5q4o7"]
 [ext_resource type="PackedScene" uid="uid://xeolspn531r6" path="res://src/remote/remote.tscn" id="2_gh0ne"]
-[ext_resource type="PackedScene" uid="uid://caqqu8g7wrcvl" path="res://src/games/baseball_training.tscn" id="3_5q4o7"]
+[ext_resource type="PackedScene" uid="uid://c0dd5mo4x2fvb" path="res://src/menues/home.tscn" id="4_3cfgd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eewff"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -138,7 +138,7 @@ mesh = SubResource("ArrayMesh_3cfgd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055092096, 1.3556575, -2.676169)
 mesh = SubResource("ArrayMesh_fyndt")
 
-[node name="TV Screen" type="MeshInstance3D" parent="TV" unique_id=1234101153]
+[node name="TV Screen" type="MeshInstance3D" parent="TV" unique_id=1234101153 groups=["TV"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
 mesh = SubResource("PlaneMesh_rlaii")
 
@@ -147,13 +147,15 @@ transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, -
 mesh = SubResource("QuadMesh_5q4o7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TV" unique_id=1884739692]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D" unique_id=330749065]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.34941816)
 shape = SubResource("ConcavePolygonShape3D_5q4o7")
 
 [node name="Wii Remote" parent="." unique_id=2037275998 instance=ExtResource("2_gh0ne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1620064, 2.5792272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4062095, 1.6362845, 2.579)
+clamp_values = Vector2(0.4, 0.4)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=350836536]
 transform = Transform3D(0.9748313, -0.0565399, 0.21565531, 0, 0.9673076, 0.253606, -0.22294387, -0.24722305, 0.94296175, 1.184, 2.143, 4.598)
@@ -164,4 +166,9 @@ fov = 35.0
 own_world_3d = true
 size = Vector2i(600, 480)
 script = ExtResource("2_5q4o7")
-test_scene = ExtResource("3_5q4o7")
+
+[node name="Home" parent="GameWorld" unique_id=2082616120 instance=ExtResource("4_3cfgd")]
+offset_left = 300.0
+offset_top = 240.0
+offset_right = 0.0
+offset_bottom = 0.0

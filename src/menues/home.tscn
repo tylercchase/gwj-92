@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://c0dd5mo4x2fvb"]
+
+[ext_resource type="Texture2D" uid="uid://bnvau4glltk31" path="res://assets/menu/base_home_button.svg" id="1_2ep87"]
+[ext_resource type="Texture2D" uid="uid://chrhbmg6lj2o2" path="res://assets/menu/background.png" id="1_dremb"]
+[ext_resource type="Script" uid="uid://cqkhpmrx0xgtt" path="res://src/menues/menu_interface.gd" id="1_tu8i5"]
+[ext_resource type="Texture2D" uid="uid://drqs4hggke4uf" path="res://assets/menu/home_bottom_section.svg" id="2_w7c6r"]
+[ext_resource type="Script" uid="uid://ctto8tfkao7tt" path="res://src/menues/cursor.gd" id="4_54oxq"]
+[ext_resource type="Texture2D" uid="uid://dmqbd650cjcs" path="res://assets/menu/cursor.svg" id="4_x82vi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v33yu"]
+
+[node name="Home" type="Control" unique_id=2082616120]
+layout_mode = 3
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = -502.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1697917486]
+position = Vector2(329, 242)
+scale = Vector2(1.1133333, 1.05)
+texture = ExtResource("1_dremb")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1308440580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 10.0
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v33yu")
+
+[node name="VFlowContainer" type="VBoxContainer" parent="PanelContainer" unique_id=139458730]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VFlowContainer" unique_id=1239262665]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/VFlowContainer/MarginContainer" unique_id=1781190458]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=797726890]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=746160732]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=166891627]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=1266480087]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=1833137416]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=558578662]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=78234886]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton9" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=162715090]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton10" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=208525959]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton11" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=830246567]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton12" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=966879631]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureButton13" type="TextureButton" parent="PanelContainer/VFlowContainer/MarginContainer/HFlowContainer" unique_id=128945580]
+layout_mode = 2
+texture_normal = ExtResource("1_2ep87")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VFlowContainer" unique_id=1138743191]
+layout_mode = 2
+texture = ExtResource("2_w7c6r")
+
+[node name="Cursor" type="TextureRect" parent="." unique_id=1605627675 node_paths=PackedStringArray("menu_interface", "buttons")]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_x82vi")
+script = ExtResource("4_54oxq")
+menu_interface = NodePath("../MenuInterface")
+buttons = NodePath("../PanelContainer/VFlowContainer/MarginContainer/HFlowContainer")
+
+[node name="MenuInterface" type="Node" parent="." unique_id=1361649784]
+script = ExtResource("1_tu8i5")
